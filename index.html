@@ -4,6 +4,7 @@
 		<title>Steven J. Dodge</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -21,22 +22,29 @@
 			</nav>
 
 		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/profilepic.jpg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Hello, I'm <strong>Steven J. Dodge</strong>.</h1>
-							</header>
-							<p style="color:rgb(12, 12, 12)">I'm a leader, developer, father, husband, and game designer.</p>
-							<a href="#philosophies" class="button large scrolly">Learn about what I do</a>
+			
+				<article id="top" class="wrapper style1">
+					<div class="overlay">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-5 col-md-12 col-sm-12">
+									<span class="image fit"><img src="images/profilepic.jpg" alt="" /></span>
+								</div>
+								<div class="col-lg-7 col-md-12 col-sm-12">
+									<header>
+										<h1 class="col-12">Hello, I'm <strong>Steven J. Dodge</strong>.</h1>
+									</header>
+									<div >
+										<p style="color:rgb(0, 0, 0)">I'm a leader, developer, father, husband, and game designer.</p>
+									</div>
+									
+									<a href="#philosophies" class="button large scrolly">Learn about what I do</a>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</article>
+				</article>
+			
 
 		<!-- Philosophies -->
 			<article id="philosophies" class="wrapper style2">
@@ -46,28 +54,28 @@
 						<h4> I started in IT support and have worked my way up the process chain to maximize my efforts to help.</h4>
 						<p>Forged in the trenches, here are my core philosophies</p>
 					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured solid fa-magic"></span>
-								<h3>Automation Focus</h3>
-								<p>No task is too small to be automated away. A dev-ops focused approach to automation and deployment means I strive to avoid getting caught on the paperwork or meaningless tasks assiociated with development. Automate early and focus on what matters!</p>
-							</section>
+					<div class="row">
+						<div class="card col-sm-12 col-md-12 col-xl-4 box style1">
+							<span class="card-img-top icon featured solid fa-magic"></span>
+							<div class="card-body">
+									<h3 class="card-title">Automation Focus</h3>
+									<p class="card-text">No task is too small to be automated away. A dev-ops focused approach to automation and deployment means I strive to avoid getting caught on the paperwork or meaningless tasks assiociated with development. Automate early and focus on what matters!</p>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured solid fa-archway"></span>
-								<h3>Architecture first</h3>
-								<p>I see the big picture and can break down all of the steps required to deliver a project. I try to solution engineer in ways that won't lock myself into a design sinkhole. I heavily utilize a layered approaches and data driven solutions.</p>
-							</section>
+						
+						<div class="card col-sm-12 col-md-12 col-xl-4 box style1" >
+								<span class="card-img-top icon featured solid fa-archway"></span>
+								<div class="card-body">
+										<h3 class="card-title">Architecture first</h3>
+										<p class="card-text">I see the big picture and can break down all of the steps required to deliver a project. I try to solution engineer in ways that won't lock myself into a design sinkhole. I heavily utilize a layered approaches and data driven solutions.</p>
+								</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured solid fa-project-diagram"></span>
-								<h3>Strategic Allignment</h3>
-								<p>It's important to know where to focus your efforts to deliver the maximum return to the business. Focused feedback driven development can give so much more bang for your buck.</p>
-								<ul style="list-style-type:none"><li><strong>Start small</strong></li><li><strong>Aquire early adopters</strong></li><li><strong>Scale</strong></li><li><strong>Iterate</strong></li></ul>
-							</section>
+						<div class="card col-sm-12 col-md-12 col-xl-4 box style1">
+								<span class="card-img-top icon featured solid fa-project-diagram"></span>
+								<div class="card-body">
+										<h3 class="card-title">Strategic Allignment</h3>
+										<p class="card-text">It's important to know where to focus your efforts to deliver the maximum return to the business. Focused feedback driven development can give so much more bang for your buck.</p>
+								</div>
 						</div>
 					</div>
 					<footer>
@@ -83,16 +91,75 @@
 				<div class="container">
 					<header>
 						<h2>Here’s some stuff I made recently.</h2>
-						<!-- <p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p> -->
 					</header>
 					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/stagehand.png" alt="" /></a>
-								<h3><a href="#">Stagehand</a></h3>
-								<p>Custom ServiceNow portal for CBS Corporation</p>
-							</article>
-						</div>
+						<article class="col-lg-4 col-sm-12" style="padding-top: 2em" id="project1">
+							<div class="box style2" id="heading1">
+								<a class="scrolly" href="#articleContainer1">
+									<div class="collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+										<div class="image featured"><img  src="images/stagehand.png" alt="" ></div>	
+										<h3>Stagehand</h3>
+										<p>Custom ServiceNow portal for CBS Corporation</p>
+									</div>
+								</a>
+							</div>
+						</article>
+
+						<article class="col-lg-4 col-sm-12"style="padding-top: 2em" id="project2">
+							<div class="box style2" id="heading2">
+								<a class="scrolly" href="#articleContainer1">
+									<div class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+										<div class="image featured"><img  src="images/groupmanager.png" alt="" ></div>	
+										<h3>Group Manager</h3>
+										<p>Custom interface to manage Active Directory groups and memberships.</p>
+									</div>
+								</a>								
+							</div>
+						</article>
+
+						<article class="col-lg-4 col-sm-12" style="padding-top: 2em" id="project3">
+							<div class="box style2" id="heading3">
+								<a class="scrolly" href="#articleContainer1">
+									<div class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+										<div class="image featured"><img  src="images/blaster_minimized.gif" alt="" ></div>	
+										<h3>SpaceRoyale.io</h3>
+										<p>Node js based battle royale game with realtime multiplayer</p>
+									</div>
+								</a>								
+							</div>
+						</article>
+					</div>
+					<div class="row">
+						<article id="articleContainer1" class="col-12">
+							<div id="collapse1" class="collapse" aria-labelledby="heading1">
+								<div class="card-body">
+									One
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+								<a class=" button scrolly collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1" href="#project1">Close</a>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2">
+								<div class="card-body">
+									Two
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+								<a class=" button scrolly collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2" href="#project2">Close</a>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="heading3">
+								<div class="card-body">
+									Three
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+								<a class=" button scrolly collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3" href="#project3">Close</a>
+							</div>
+						</article>
+					</div>
+				</div>
+				
+
+					<div class="row">
+						
+						<!--
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/groupmanager.png" alt="" /></a>
@@ -114,7 +181,6 @@
 								<p>Custom blog site for my wife using AWS to host using a basic bootstrap layout</p>
 							</article>
 						</div>
-						<!--
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
@@ -131,9 +197,10 @@
 						</div>
 						-->
 					</div>
-					<footer>
+					<!-- <footer>
 						<a href="#contact" class="button large scrolly">Get in touch with me</a>
 					</footer>
+					-->
 				</div>
 			</article>
 
@@ -168,6 +235,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
 	</body>
 </html>

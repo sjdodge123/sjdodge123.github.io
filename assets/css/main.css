@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
 @import url("fontawesome-all.min.css");
 
-/*
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -35,6 +29,13 @@ body {
 
 ol, ul {
 	list-style: none;
+}
+
+.overlay {
+    z-index: 1;
+	overflow: none;
+	backdrop-filter: blur(3px);
+    background: rgba(248, 248, 248, 0); /*can be anything, of course*/
 }
 
 blockquote, q {
@@ -71,6 +72,7 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+
 
 /* Basic */
 
@@ -110,8 +112,10 @@ input, select, textarea {
 		-webkit-transition: color .2s ease-in-out;
 		-ms-transition: color .2s ease-in-out;
 		transition: color .2s ease-in-out;
-		color: rgba(231, 150, 43, 0.788);
+		/*color: rgba(231, 150, 43, 0.788);
 		text-decoration: underline;
+		*/
+		text-decoration: none !important;
 	}
 
 		a:hover {
@@ -164,7 +168,7 @@ input, select, textarea {
 	}
 
 	h1 {
-		font-size: 3.25em;
+		font-size: 2.75em;
 		letter-spacing: -0.025em;
 		font-weight: 300;
 	}
@@ -209,7 +213,7 @@ input, select, textarea {
 	}
 
 		header > p {
-			font-size: 1.25em;
+			font-size: 1.25em; 
 			margin: 0;
 		}
 
@@ -220,6 +224,9 @@ input, select, textarea {
 		footer > p {
 			font-size: 1.25em;
 		}
+	.image > .featured > p{
+		color: red;
+	}
 
 /* Container */
 
@@ -1994,17 +2001,14 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			background-image: url("../../images/fuji.jpg");
-			background-color: rgba(255, 255, 255, 0.856);
 		}
 
 		.wrapper.style2 {
 			background-color: #fafafa;
-			text-shadow: 1px 1px 0px #fff;
 		}
 
 		.wrapper.style3 {
 			background-color: #f4f4f4;
-			text-shadow: 1px 1px 0px #fff;
 		}
 
 		.wrapper.style4 {
