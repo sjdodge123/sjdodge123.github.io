@@ -1,0 +1,36 @@
+{
+    "Stagehand" : {
+      "id" : "sh-card",
+      "card-title" : "Stagehand",
+      "card-image" : "assets/img/stagehand.png",
+      "card-alt" : "Stagehand portal image",
+      "card-short" : "Custom ServiceNow portal for CBS Corporation",
+      "modal-image": "assets/img/stagehand.png",
+      "modal-title": "Stagehand",
+      "modal-github": "",
+      "modal-content":"<p>Stagehand was a collaborative effort between designers, developers and business analysts.</p>"
+    },
+    "Group Manager" : {
+      "id" : "gm-card",
+      "card-title" : "Group Manager",
+      "card-image" : "assets/img/groupmanager.png",
+      "card-alt" : "Stagehand group manager image with group tiles",
+      "card-short" : "Custom interface to managet Active Directory groups and memberships",
+      "modal-image": "assets/img/groupmanager.png",
+      "modal-title": "Group Manager",
+      "modal-github": "",
+      "modal-content":"Group Manager Content"
+    },
+    "SpaceRoyale.io" : {
+      "id" : "sr-card",
+      "card-title" : "SpaceRoyale.io",
+      "card-image" : "assets/img/blaster_minimized.gif",
+      "card-alt" : "Ship shooting laser turret at another ship",
+      "card-short" : "Node js based battle royale game with realtime multiplayer",
+      "modal-image": "assets/img/blaster_minimized.gif",
+      "modal-title": "SpaceRoyale.io",
+      "modal-github": "https://github.com/sjdodge123/spaceroyale.io",
+      "modal-content": ""
+    }
+    
+}

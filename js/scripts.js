@@ -64,42 +64,7 @@
         $(this).removeClass("floating-label-form-group-with-focus");
       });
     });
-    var projectList = {
-        "Stagehand" : {
-          "id" : "sh-card",
-          "card-title" : "Stagehand",
-          "card-image" : "assets/img/stagehand.png",
-          "card-alt" : "Stagehand portal image",
-          "card-short" : "Custom ServiceNow portal for CBS Corporation",
-          "modal-image": "assets/img/stagehand.png",
-          "modal-title": "Stagehand",
-          "modal-github": "",
-          "modal-content":"Stagehand Content"
-        },
-        "Group Manager" : {
-          "id" : "gm-card",
-          "card-title" : "Group Manager",
-          "card-image" : "assets/img/groupmanager.png",
-          "card-alt" : "Stagehand group manager image with group tiles",
-          "card-short" : "Custom interface to managet Active Directory groups and memberships",
-          "modal-image": "assets/img/groupmanager.png",
-          "modal-title": "Group Manager",
-          "modal-github": "",
-          "modal-content":"Group Manager Content"
-        },
-        "SpaceRoyale.io" : {
-          "id" : "sr-card",
-          "card-title" : "SpaceRoyale.io",
-          "card-image" : "assets/img/blaster_minimized.gif",
-          "card-alt" : "Ship shooting laser turret at another ship",
-          "card-short" : "Node js based battle royale game with realtime multiplayer",
-          "modal-image": "assets/img/blaster_minimized.gif",
-          "modal-title": "SpaceRoyale.io",
-          "modal-github": "https://github.com/sjdodge123/spaceroyale.io",
-          "modal-content":"SpaceRoyale.io Content"
-        }
-        
-    };
+
     var cardContainer = $("#card-container"),
         pageBody = $("#page-top"),
         id = '',
@@ -111,54 +76,57 @@
         modalTitle = '',
         modalGithub = '',
         modalContent = '';
-
-    $.each( projectList, function( key, value ) {
-      $.each(value, function( keyi, valuei ) {
-        if(keyi == "id"){
-          id = valuei;
+    
+    $.getJSON("/assets/files/projects.json", function(json) {
+      $.each( json, function( key, value ) {
+        $.each(value, function( keyi, valuei ) {
+          if(keyi == "id"){
+            id = valuei;
+          }
+          if(keyi == "card-title"){
+            cardTitle = valuei;
+          }
+          if(keyi == "card-image"){
+            cardImage = valuei;
+          }
+          if(keyi == "card-alt"){
+            cardAlt = valuei;
+          }
+          if(keyi == "card-short"){
+            cardShort = valuei;
+          }
+          if(keyi == "modal-image"){
+            modalImage = valuei;
+          }
+          if(keyi == "modal-title"){
+            modalTitle = valuei;
+          }
+          if(keyi == "modal-github"){
+            modalGithub = valuei;
+          }
+          if(keyi == "modal-content"){
+            modalContent = valuei;
+          }
+        });
+        //Insert card
+        cardContainer.append('<div class="col-md-6 col-lg-4 mb-5"><div id="'+ id +'" class="card portfolio-item mx-auto" data-toggle="modal" data-target="#pm-'+id+'"></div></div>');
+        //Insert card values
+        var card = $("#"+ id +"");
+        card.append('<img class="img-fluid w-100" src="'+cardImage+'" alt="'+cardAlt+'" />');
+        card.append('<div class="card-body"><h5 class="card-title">'+cardTitle+'</h5><p class="card-text">'+cardShort+'</p></div>');
+        card.append('<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"><div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div></div>');
+        //Insert Modal
+        pageBody.append('<div class="portfolio-modal modal fade" id="pm-'+ id + '" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true"><div class="modal-dialog modal-xl" role="document"><div class="modal-content"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button><div class="modal-body"><div id ="md-'+id+'" class="container"></div></div></div></div></div>');
+        var modalData = $("#md-"+ id +"");
+        modalData.append('<div class="row justify-content-center"><div id="mh-'+id+'" class="col-lg-8 text-center mb-5"><h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">'+modalTitle+'</h2><br/><img class="img-fluid rounded" src="'+modalImage+'" alt="'+cardAlt+'" /></div></div>');
+        var modalHeader = $("#mh-"+ id+"");
+        if(modalGithub != ''){
+          modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalGithub+'"><i class="fab fa-fw fa-github"></i></a>');
         }
-        if(keyi == "card-title"){
-          cardTitle = valuei;
-        }
-        if(keyi == "card-image"){
-          cardImage = valuei;
-        }
-        if(keyi == "card-alt"){
-          cardAlt = valuei;
-        }
-        if(keyi == "card-short"){
-          cardShort = valuei;
-        }
-        if(keyi == "modal-image"){
-          modalImage = valuei;
-        }
-        if(keyi == "modal-title"){
-          modalTitle = valuei;
-        }
-        if(keyi == "modal-github"){
-          modalGithub = valuei;
-        }
-        if(keyi == "modal-content"){
-          modalContent = valuei;
-        }
+        modalData.append('<div class="justify-content-start mb-5">'+modalContent+'</div>');
+        modalData.append('<div class="row justify-content-center"><button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button></div>');
       });
-      //Insert card
-      cardContainer.append('<div class="col-md-6 col-lg-4 mb-5"><div id="'+ id +'" class="card portfolio-item mx-auto" data-toggle="modal" data-target="#pm-'+id+'"></div></div>');
-      //Insert card values
-      var card = $("#"+ id +"");
-      card.append('<img class="img-fluid w-100" src="'+cardImage+'" alt="'+cardAlt+'" />');
-      card.append('<div class="card-body"><h5 class="card-title">'+cardTitle+'</h5><p class="card-text">'+cardShort+'</p></div>');
-      card.append('<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"><div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div></div>');
-      //Insert Modal
-      pageBody.append('<div class="portfolio-modal modal fade" id="pm-'+ id + '" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true"><div class="modal-dialog modal-xl" role="document"><div class="modal-content"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button><div class="modal-body"><div id ="md-'+id+'" class="container"></div></div></div></div></div>');
-      var modalData = $("#md-"+ id +"");
-      modalData.append('<div class="row justify-content-center"><div id="mh-'+id+'" class="col-lg-8 text-center mb-5"><h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">'+modalTitle+'</h2><br/><img style="height:400px" class="img-fluid rounded" src="'+modalImage+'" alt="'+cardAlt+'" /></div></div>');
-      var modalHeader = $("#mh-"+ id+"");
-      if(modalGithub != ''){
-        modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalGithub+'"><i class="fab fa-fw fa-github"></i></a>');
-      }
-      modalData.append('<div class="justify-content-start mb-5">'+modalContent+'</div>');
-      modalData.append('<div class="row justify-content-center"><button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button></div>');
     });
+
 
   })(jQuery); // End of use strict
