@@ -74,6 +74,7 @@
         cardShort = '',
         modalImage = '',
         modalTitle = '',
+        modalUrl = '',
         modalGithub = '',
         modalContent = '';
     
@@ -101,6 +102,9 @@
           if(keyi == "modal-title"){
             modalTitle = valuei;
           }
+          if(keyi == "modal-url"){
+            modalUrl = valuei;
+          }
           if(keyi == "modal-github"){
             modalGithub = valuei;
           }
@@ -118,10 +122,13 @@
         //Insert Modal
         pageBody.append('<div class="portfolio-modal modal fade" id="pm-'+ id + '" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true"><div class="modal-dialog modal-xl" role="document"><div class="modal-content"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button><div class="modal-body"><div id ="md-'+id+'" class="container"></div></div></div></div></div>');
         var modalData = $("#md-"+ id +"");
-        modalData.append('<div class="row justify-content-center"><div id="mh-'+id+'" class="col-lg-8 text-center mb-5"><h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">'+modalTitle+'</h2><br/><img style="height:400px" class="img-fluid rounded" src="'+modalImage+'" alt="'+cardAlt+'" /></div></div>');
+        modalData.append('<div class="row justify-content-center"><div id="mh-'+id+'" class="col-lg-8 text-center mb-5"><h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">'+modalTitle+'</h2><br/><img class="img-fluid rounded w-100" src="'+modalImage+'" alt="'+cardAlt+'" /></div></div>');
         var modalHeader = $("#mh-"+ id+"");
         if(modalGithub != ''){
           modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalGithub+'"><i class="fab fa-fw fa-github"></i></a>');
+        }
+        if(modalUrl != ''){
+          modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalUrl+'"><i class="fas fa-link"></i></a>');
         }
         modalData.append('<div class="justify-content-start mb-5">'+modalContent+'</div>');
         modalData.append('<div class="row justify-content-center"><button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button></div>');
