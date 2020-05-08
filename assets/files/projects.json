@@ -29,7 +29,7 @@
       "card-image" : "assets/img/blaster_minimized.gif",
       "card-alt" : "Ship shooting laser turret at another ship",
       "card-short" : "Node js based battle royale game with realtime multiplayer",
-      "modal-image": "assets/img/blaster_minimized.gif",
+      "modal-image": "assets/img/portfolio/spaceroyale.io/image7.png",
       "modal-title": "SpaceRoyale.io",
       "modal-url": "http://spaceroyale.io",
       "modal-github": "https://github.com/sjdodge123/spaceroyale.io",
@@ -47,6 +47,32 @@
         "modal-url": "www.cadygorbet.com",
         "modal-github": "https://github.com/sjdodge123/cadygorbet",
         "modal-content":"<p>Content coming soon!</p>"
-      }
+      },
+
+    "Gravity Golf" : {
+    "id" : "gravgolf-card",
+    "card-title" : "Gravity Golf",
+    "card-image" : "assets/img/portfolio/gravitygolf/goalscoresmall.gif",
+    "card-alt" : "Picture of a ball going into a goal led by gravity well",
+    "card-short" : "Puzzle game prototype made in unity",
+    "modal-image": "assets/img/portfolio/gravitygolf/goalscoresmall.gif",
+    "modal-title": "Gravity Golf",
+    "modal-url": "",
+    "modal-github": "https://github.com/sjdodge123/GravPuzzleUnity",
+    "modal-content":"<p>Content coming soon!</p>"
+    },
+
+    "Interstellar" : {
+        "id" : "interstellar-card",
+        "card-title" : "Interstellar",
+        "card-image" : "assets/img/portfolio/interstellar/asteroidspinsmall.gif",
+        "card-alt" : "Picture of asteroids spinning around a ship in the center",
+        "card-short" : "Physics demo using self made game engine in javascript canvas",
+        "modal-image": "assets/img/portfolio/interstellar/asteroidspinhd.gif",
+        "modal-title": "Interstellar",
+        "modal-url": "",
+        "modal-github": "https://github.com/sjdodge123/interstellar",
+        "modal-content":"<p>Content coming soon!</p>"
+    }
     
 }
