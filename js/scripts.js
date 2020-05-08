@@ -122,7 +122,7 @@
         var card = $("#"+ id +"");
         card.append('<img class="img-fluid w-100" src="'+cardImage+'" alt="'+cardAlt+'" />');
         card.append('<div class="card-body text-secondary"><h5 class="card-title">'+cardTitle+'</h5><p class="card-text">'+cardShort+'</p><div class="card-foot text-secondary text-center"><p class="text-center">'+ cardSkills +'</p></div>');
-        card.append('<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"><div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div></div>');
+        card.append('<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"><div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-search-plus fa-3x"></i></div></div>');
         //Insert Modal
         pageBody.append('<div class="portfolio-modal modal fade" id="pm-'+ id + '" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true"><div class="modal-dialog modal-xl" role="document"><div class="modal-content"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button><div class="modal-body"><div id ="md-'+id+'" class="container"></div></div></div></div></div>');
         var modalData = $("#md-"+ id +"");
