@@ -3,9 +3,10 @@
     * Copyright 2013-2020 Start Bootstrap
     * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/master/LICENSE)
     */
+
     (function($) {
     "use strict"; // Start of use strict
-  
+      
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -65,21 +66,24 @@
       });
     });
 
-    var cardContainer = $("#card-container"),
-        pageBody = $("#page-top"),
-        id = '',
-        cardTitle = '',
-        cardImage = '',
-        cardAlt = '',
-        cardShort = '',
-        cardSkills = '',
-        modalImage = '',
-        modalTitle = '',
-        modalUrl = '',
-        modalGithub = '',
-        modalContent = '';
+   
     
+
     $.getJSON("/assets/files/projects.json", function(json) {
+      var cardContainer = $("#card-container"),
+          pageBody = $("#page-top"),
+          id = '',
+          cardTitle = '',
+          cardImage = '',
+          cardAlt = '',
+          cardShort = '',
+          cardSkills = '',
+          modalImage = '',
+          modalTitle = '',
+          modalUrl = '',
+          modalGithub = '',
+          modalContent = '';
+
       $.each( json, function( key, value ) {
         $.each(value, function( keyi, valuei ) {
           if(keyi == "id"){
@@ -99,6 +103,7 @@
           }
           if(keyi == "card-skills"){
             cardSkills = valuei;
+          
           }
           if(keyi == "modal-image"){
             modalImage = valuei;
@@ -116,8 +121,9 @@
             modalContent = valuei;
           }
         });
+
         //Insert card
-        cardContainer.append('<div class="col-md-6 col-lg-4 mb-5"><div id="'+ id +'" class="card portfolio-item mx-auto" data-toggle="modal" data-target="#pm-'+id+'"></div></div>');
+        cardContainer.append('<div class="col-md-6 col-lg-4 mb-5 card-object"><div id="'+ id +'" class="card portfolio-item mx-auto" data-toggle="modal" data-target="#pm-'+id+'"></div></div>');
         //Insert card values
         var card = $("#"+ id +"");
         card.append('<img class="img-fluid w-100" src="'+cardImage+'" alt="'+cardAlt+'" />');
@@ -142,6 +148,23 @@
         modalData.append('<div class="row justify-content-center"><button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button></div>');
       });
     });
+    
+    $(document).ready(function(){
+      /*
+      var pillContainer = $("#pill-container");
+      for(var i=0;i<skillList.length;i++){
+        pillContainer.append('<button type="button" onclick="filterclick(' + +')" class="btn btn-primary">' + skillList[i]+'</button>');
+      }
+      */
+      
+      $("#filterInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".card-object").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
 
+    
 
   })(jQuery); // End of use strict

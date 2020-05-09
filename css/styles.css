@@ -1995,7 +1995,7 @@ pre code {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color:rgba(245, 135, 9, 0.9);
   background-color: #fff;
   background-clip: padding-box;
   border: 0.125rem solid #ced4da;
@@ -2016,7 +2016,7 @@ pre code {
   text-shadow: 0 0 0 #495057;
 }
 .form-control:focus {
-  color: #495057;
+  color: rgba(245, 135, 9, 0.9);
   background-color: #fff;
   border-color: #6bebd1;
   outline: 0;
@@ -4364,11 +4364,6 @@ input[type=button].btn-block {
   position: absolute;
   bottom:0;
 }
-/*
-.card-foot p{
-  /*text-align: center;
-} 
-*/
 .card-content {
   height: 300px;
 }
@@ -10253,4 +10248,25 @@ form .row:first-child .floating-label-form-group {
 
 .circle {
   border-radius: 100%;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(245, 135, 9, 0.9);
+  box-shadow: 0 0 0 rgba(245, 135, 9, 0.9) inset, 0 0 1px rgba(245, 135, 9, 0.9);
+  outline: 0 none;
 }
