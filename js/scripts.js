@@ -150,15 +150,22 @@
     });
     
     $(document).ready(function(){
-      /*
+      
+      var skillList = ["All","ServiceNow", "JavaScript","HTML5","Leadership","AWS","Game Design","Unity","C#","Integration","PHP","Bootstrap"];
       var pillContainer = $("#pill-container");
       for(var i=0;i<skillList.length;i++){
-        pillContainer.append('<button type="button" onclick="filterclick(' + +')" class="btn btn-primary">' + skillList[i]+'</button>');
+        var temp = pillContainer.append('<button type="button" class="btn btn-light text-secondary ml-1 mb-2 pill ' + (String(skillList[i]).toLowerCase() == "all" ? "active" : "") + '">' + skillList[i]+'</button>');
       }
-      */
-      
-      $("#filterInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
+
+      $(".pill").on("click",function(){
+        $(".pill").removeClass("active");
+        $(this).addClass("active");
+
+        var value = $(this).text().toLowerCase();
+        if(value == "all"){
+          $(".card-object").toggle(true);
+          return;
+        }
         $(".card-object").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
