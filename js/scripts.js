@@ -66,110 +66,120 @@
       });
     });
 
-   
-    
-
-    $.getJSON("/assets/files/projects.json", function(json) {
-      var cardContainer = $("#card-container"),
-          pageBody = $("#page-top"),
-          id = '',
-          cardTitle = '',
-          cardImage = '',
-          cardAlt = '',
-          cardShort = '',
-          cardSkills = '',
-          modalImage = '',
-          modalTitle = '',
-          modalUrl = '',
-          modalGithub = '',
-          modalContent = '';
-
-      $.each( json, function( key, value ) {
-        $.each(value, function( keyi, valuei ) {
-          if(keyi == "id"){
-            id = valuei;
-          }
-          if(keyi == "card-title"){
-            cardTitle = valuei;
-          }
-          if(keyi == "card-image"){
-            cardImage = valuei;
-          }
-          if(keyi == "card-alt"){
-            cardAlt = valuei;
-          }
-          if(keyi == "card-short"){
-            cardShort = valuei;
-          }
-          if(keyi == "card-skills"){
-            cardSkills = valuei;
-          
-          }
-          if(keyi == "modal-image"){
-            modalImage = valuei;
-          }
-          if(keyi == "modal-title"){
-            modalTitle = valuei;
-          }
-          if(keyi == "modal-url"){
-            modalUrl = valuei;
-          }
-          if(keyi == "modal-github"){
-            modalGithub = valuei;
-          }
-          if(keyi == "modal-content"){
-            modalContent = valuei;
-          }
-        });
-
-        //Insert card
-        cardContainer.append('<div class="col-md-6 col-lg-4 mb-5 card-object"><div id="'+ id +'" class="card portfolio-item mx-auto" data-toggle="modal" data-target="#pm-'+id+'"></div></div>');
-        //Insert card values
-        var card = $("#"+ id +"");
-        card.append('<img class="img-fluid w-100" src="'+cardImage+'" alt="'+cardAlt+'" />');
-        card.append('<div class="card-body text-secondary"><h5 class="card-title">'+cardTitle+'</h5><p class="card-text">'+cardShort+'</p><div class="card-foot text-secondary text-center"><p class="text-center">'+ cardSkills +'</p></div>');
-        card.append('<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"><div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-search-plus fa-3x"></i></div></div>');
-        //Insert Modal
-        pageBody.append('<div class="portfolio-modal modal fade" id="pm-'+ id + '" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true"><div class="modal-dialog modal-xl" role="document"><div class="modal-content"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button><div class="modal-body"><div id ="md-'+id+'" class="container"></div></div></div></div></div>');
-        var modalData = $("#md-"+ id +"");
-        //Insert Modal header
-        modalData.append('<div class="row justify-content-center"><div id="mh-'+id+'" class="col-lg-8 text-center mb-5"><h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">'+modalTitle+'</h2><br/><img class="img-fluid rounded w-100" src="'+modalImage+'" alt="'+cardAlt+'" /></div></div>');
-        var modalHeader = $("#mh-"+ id+"");
-        //Modal icons
-        if(modalGithub != ''){
-          modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalGithub+'"><i class="fab fa-fw fa-github"></i></a>');
-        }
-        if(modalUrl != ''){
-          modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalUrl+'"><i class="fas fa-link"></i></a>');
-        }
-        //Insert Modal content
-        modalData.append('<div class="justify-content-start mb-5">'+modalContent+'</div>');
-        //Insert Modal footer
-        modalData.append('<div class="row justify-content-center"><button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button></div>');
-      });
-    });
     
     $(document).ready(function(){
-      
-      var skillList = ["All","ServiceNow", "JavaScript","HTML5","Leadership","AWS","Game Design","Unity","C#","Integration","PHP","Bootstrap"];
-      var pillContainer = $("#pill-container");
-      for(var i=0;i<skillList.length;i++){
-        var temp = pillContainer.append('<button type="button" class="btn btn-light text-secondary ml-1 mb-2 pill ' + (String(skillList[i]).toLowerCase() == "all" ? "active" : "") + '">' + skillList[i]+'</button>');
-      }
+      var skillList = ["All"] ;
 
-      $(".pill").on("click",function(){
-        $(".pill").removeClass("active");
-        $(this).addClass("active");
+      $.getJSON("/assets/files/projects.json", function(json) {
+        var cardContainer = $("#card-container"),
+            pageBody = $("#page-top"),
+            id = '',
+            cardTitle = '',
+            cardImage = '',
+            cardAlt = '',
+            cardShort = '',
+            cardSkills = '',
+            modalImage = '',
+            modalTitle = '',
+            modalUrl = '',
+            modalGithub = '',
+            modalContent = '';
+  
+        $.each( json, function( key, value ) {
+          $.each(value, function( keyi, valuei ) {
+            if(keyi == "id"){
+              id = valuei;
+            }
+            if(keyi == "card-title"){
+              cardTitle = valuei;
+            }
+            if(keyi == "card-image"){
+              cardImage = valuei;
+            }
+            if(keyi == "card-alt"){
+              cardAlt = valuei;
+            }
+            if(keyi == "card-short"){
+              cardShort = valuei;
+            }
+            if(keyi == "card-skills"){
+              cardSkills = valuei;
+            
+            }
+            if(keyi == "modal-image"){
+              modalImage = valuei;
+            }
+            if(keyi == "modal-title"){
+              modalTitle = valuei;
+            }
+            if(keyi == "modal-url"){
+              modalUrl = valuei;
+            }
+            if(keyi == "modal-github"){
+              modalGithub = valuei;
+            }
+            if(keyi == "modal-content"){
+              modalContent = valuei;
+            }
+          });
+  
+          //Insert card
+          cardContainer.append('<div class="col-md-6 col-lg-4 mb-5 card-object"><div id="'+ id +'" class="card portfolio-item mx-auto" data-toggle="modal" data-target="#pm-'+id+'"></div></div>');
+          //Insert card values
+          var card = $("#"+ id +"");
+          card.append('<img class="img-fluid w-100" src="'+cardImage+'" alt="'+cardAlt+'" />');
+          card.append('<div class="card-body text-secondary"><h5 class="card-title">'+cardTitle+'</h5><p class="card-text">'+cardShort+'</p><div class="card-foot text-secondary text-center"><p class="text-center">'+ cardSkills +'</p></div>');
+          card.append('<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"><div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-search-plus fa-3x"></i></div></div>');
+          //Insert Modal
+          pageBody.append('<div class="portfolio-modal modal fade" id="pm-'+ id + '" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true"><div class="modal-dialog modal-xl" role="document"><div class="modal-content"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button><div class="modal-body"><div id ="md-'+id+'" class="container"></div></div></div></div></div>');
+          var modalData = $("#md-"+ id +"");
+          //Insert Modal header
+          modalData.append('<div class="row justify-content-center"><div id="mh-'+id+'" class="col-lg-8 text-center mb-5"><h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">'+modalTitle+'</h2><br/><img class="img-fluid rounded w-100" src="'+modalImage+'" alt="'+cardAlt+'" /></div></div>');
+          var modalHeader = $("#mh-"+ id+"");
+          //Modal icons
+          if(modalGithub != ''){
+            modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalGithub+'"><i class="fab fa-fw fa-github"></i></a>');
+          }
+          if(modalUrl != ''){
+            modalHeader.append('<a class="mt-3 btn btn-outline-dark btn-social mx-1" href="'+modalUrl+'"><i class="fas fa-link"></i></a>');
+          }
+          //Insert Modal content
+          modalData.append('<div class="justify-content-start mb-5">'+modalContent+'</div>');
+          //Insert Modal footer
+          modalData.append('<div class="row justify-content-center"><button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button></div>');
+        });
 
-        var value = $(this).text().toLowerCase();
-        if(value == "all"){
-          $(".card-object").toggle(true);
-          return;
+        $( ".card-foot p" ).each(function( index ) {
+          var currentSkills = String($( this ).text()).split('|');
+          for(var j=0;j<currentSkills.length;j++){
+            var currentSkill =  String(currentSkills[j]).trim();;
+            if(skillList.indexOf(currentSkill) == -1){
+              skillList.push(currentSkill);
+            }
+          }
+        });
+
+        var pillContainer = $("#pill-container");
+        for(var i=0;i<skillList.length;i++){
+          var temp = pillContainer.append('<button type="button" class="btn btn-light text-secondary ml-1 mb-1 pill ' + (String(skillList[i]).toLowerCase() == "all" ? "active" : "") + '">' + skillList[i]+'</button>');
         }
-        $(".card-object").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+        $(".pill").on("click",function(){
+          $(".pill").removeClass("active");
+          $(this).addClass("active");
+  
+          var value = $(this).text().toLowerCase();
+          if(value == "all"){
+            $(".card-object").toggle(true);
+            return;
+          }
+          $(".card-object").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
         });
       });
+      
+      
     });
 
     
