@@ -56,17 +56,17 @@
       },
 
     "Gravity Golf" : {
-    "id" : "gravgolf-card",
-    "card-title" : "Gravity Golf",
-    "card-image" : "assets/img/portfolio/gravitygolf/goalscoresmall.gif",
-    "card-alt" : "Picture of a ball going into a goal led by gravity well",
-    "card-short" : "Puzzle game prototype made in unity",
-    "card-skills": "Unity | C# | Game Design",
-    "modal-image": "assets/img/portfolio/gravitygolf/goalscoresmall.gif",
-    "modal-title": "Gravity Golf",
-    "modal-url": "",
-    "modal-github": "https://github.com/sjdodge123/GravPuzzleUnity",
-    "modal-content":"<p>Content coming soon!</p>"
+        "id" : "gravgolf-card",
+        "card-title" : "Gravity Golf",
+        "card-image" : "assets/img/portfolio/gravitygolf/goalscoresmall.gif",
+        "card-alt" : "Picture of a ball going into a goal led by gravity well",
+        "card-short" : "Puzzle game prototype made in unity",
+        "card-skills": "Unity | C# | Game Design",
+        "modal-image": "assets/img/portfolio/gravitygolf/goalscoresmall.gif",
+        "modal-title": "Gravity Golf",
+        "modal-url": "",
+        "modal-github": "https://github.com/sjdodge123/GravPuzzleUnity",
+        "modal-content":"<p>Content coming soon!</p>"
     },
 
     "Group Manager" : {
