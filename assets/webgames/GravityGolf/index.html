@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang='en-us'>
   <head>
-    <meta charset='utf-8'>
+    
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../../css/styles.css" rel="stylesheet" />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-    <title>Unity WebGL Player | Gravity Golf</title>
-    <link rel='shortcut icon' href='TemplateData/favicon.ico'>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gravity Golf</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/img/favicon-16x16.png">
+    <link rel="manifest" href="../../../assets/img/site.webmanifest">
     <link rel='stylesheet' href='TemplateData/style.css'>
     <script src='TemplateData/UnityProgress.js'></script>
     <script src='Build/UnityLoader.js'></script>
@@ -12,16 +26,59 @@
       var unityInstance = UnityLoader.instantiate('unityContainer', 'Build/Builds.json', {onProgress: UnityProgress});
     </script>
   </head>
-  <body>
-    <div class='webgl-content'>
-      <div class="instructions">Left click to place/delete gravity well - Right click to reset the level</div>
-      <br/>
-      <div id='unityContainer' style='width: 960px; height: 600px'></div>
-      <div class='footer'>
-        <div class='webgl-logo'></div>
-        <div class='fullscreen' onclick='unityInstance.SetFullscreen(1)'></div>
-        <div class='title'>Gravity Golf</div>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="../../../index.html#page-top">Steven J. Dodge</a><button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../../index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../../index.html#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="button nav-link py-3 px-0 px-lg-3 rounded highlight" href="../../../assets/files/stevenjdodgeresume.pdf">Download Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="page-section" style='width: 960px; height: 900px'>
+        <div class='webgl-content'>
+            <div class="container">
+                <div class="instructions col-sm-12"><p>Left click or Touch to place/delete gravity well - Right click or touch with two fingers to reset the level</p></div>
+                <div id='unityContainer' style='width: 960px; height: 600px'></div>
+                  <div class='footer'>
+                    <div class='webgl-logo'></div>
+                    <div class='fullscreen' onclick='unityInstance.SetFullscreen(1)'></div>
+                    <div class='title'>Gravity Golf</div>
+                  </div>
+            </div>
+          </div>
+    </section>
+       <!-- Footer-->
+       <footer class="footer text-center">
+          <div class="container">
+              <div class="row">
+                  <!-- Footer Location-->
+                  <div class="col-lg-4 mb-5 mb-lg-0">
+                      <h4 class="text-uppercase mb-4">Location</h4>
+                      <p class="lead mb-0">Atlanta, GA</p>
+                  </div>
+                  <!-- Footer Social Icons-->
+                  <div class="col-lg-4 mb-5 mb-lg-0">
+                      <h4 class="text-uppercase mb-4">Around the Web</h4>
+                      <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/jakedodge"><i class="fab fa-fw fa-facebook-f"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://github.com/sjdodge123"><i class="fab fa-fw fa-github"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/steven-dodge-163631b3/"><i class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1" href="mailto:sjdodge@outlook.com"><i class="fas fa-envelope"></i></a>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- Copyright Section-->
+      <section class="copyright py-4 text-center text-white">
+          <div class="container"><small>Copyright © Steven J. Dodge 2020</small></div>
+      </section>
+      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+      <div class="scroll-to-top d-lg-none position-fixed">
+          <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
       </div>
-    </div>
   </body>
+
+  
 </html>
