@@ -22,6 +22,7 @@
     <link rel='stylesheet' href='TemplateData/style.css'>
     <script src='TemplateData/UnityProgress.js'></script>
     <script src='Build/UnityLoader.js'></script>
+    
     <script>
       var unityInstance = UnityLoader.instantiate('unityContainer', 'Build/Builds.json', {onProgress: UnityProgress});
     </script>
@@ -40,18 +41,31 @@
             </div>
         </div>
     </nav>
-    <section class="page-section" style='width: 960px; height: 900px'>
-        <div class='webgl-content'>
-            <div class="container">
-                <div class="instructions col-sm-12"><p>Left click or Touch to place/delete gravity well - Right click or touch with two fingers to reset the level</p></div>
-                <div id='unityContainer' style='width: 960px; height: 600px'></div>
-                  <div class='footer'>
-                    <div class='webgl-logo'></div>
-                    <div class='fullscreen' onclick='unityInstance.SetFullscreen(1)'></div>
-                    <div class='title'>Gravity Golf</div>
-                  </div>
-            </div>
+
+    
+
+    <section class="page-section" style='height: 900px'>
+      <div class="container">
+          <div class='webgl-content' style="max-width:960px; width:100%">
+              <header class="masthead">
+                  <div class="container d-flex align-items-center flex-column">
+                    <h1 class="masthead-heading text-uppercase mb-0">Controls</h1>
+                    <!-- Icon Divider-->
+                    <br/>
+                    <!-- Masthead Subheading-->
+                    <div class="mb-3">
+                        <p class="text-left masthead-subheading font-weight-light">Left click or Touch : Place/Remove gravity well</p>
+                        <p class="text-left masthead-subheading font-weight-light mb-0">Right click or Two Finger Touch : Reset current level</p>
+                    </div>
+              </header>
+                <div id='unityContainer' style='height: auto'></div>
+                <div class='footer'>
+                  <div class='webgl-logo'></div>
+                  <div class='fullscreen' onclick='unityInstance.SetFullscreen(1)'></div>
+                  <div class='title'>Gravity Golf</div>
+                </div>
           </div>
+      </div>   
     </section>
        <!-- Footer-->
        <footer class="footer text-center">
@@ -78,6 +92,11 @@
       <div class="scroll-to-top d-lg-none position-fixed">
           <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
       </div>
+      <!-- Bootstrap core JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+      <!-- Third party plugin JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   </body>
 
   
